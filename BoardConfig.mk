@@ -44,7 +44,7 @@ BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --dt $(DEVICE_PATH)/dt.img
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x01e00000 --dt $(DEVICE_PATH)/dt.img
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
 
 # Partitions
@@ -61,8 +61,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 # TWRP
 RECOVERY_VARIANT := twrp
 DEVICE_RESOLUTION := 720x1280
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/twrp.fstab
-TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/init.rc
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/root/init.rc
 RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
